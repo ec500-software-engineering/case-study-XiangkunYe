@@ -13,11 +13,12 @@ c) Although Keras support TensorFlow, CNTK, and Theano. But by default and in mo
 ### 2. Build System
 The build system used by Keras is Cmake and Bazel.
 ### 3. Frameworks / Libraries
-![Frameworks](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Frameworks:Libraries.png)
+![Frameworks](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Frameworks.png)
 ## Test Framework
 Keras is using **Travis-CI** platform. To make sure it's meaningful, it has a varitey of tests include integration tests, component tests and performance tests. The most recent test coverage I find is in 
 [Issue#60](https://github.com/keras-team/keras/issues/60):
-![Coverage](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/test_coverage.png) 
+
+![Coverage](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Test_Coverage.png) 
 
 As we can see in this picture, the platform is **Linux2** and the total coverage is **80%**.
 ## Software architecture
@@ -34,3 +35,7 @@ Then instantiating it in our model:
 myOpt = MyOptimizer()
 model.compile(loss='binary_crossentropy', optimizer=myOpt, metrics= ['accuracy'])
 ```
+Instead of standalone program, the most common way to use Keras is to import it into your own project, and it's already been integrated into Tensorflow.
+But according to my research, Tensorflow supports threads and queues to train heavy tensors asynchronously, which provides TPUs a better and much faster processing speeds. However Keras is synchronous, so you won't be able to do that in Keras. Here's the system diagram:
+
+![Diagram](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/System_Diagram.png) 
