@@ -19,4 +19,18 @@ Keras is using **Travis-CI** platform. To make sure it's meaningful, it has a va
 [Issue#60](https://github.com/keras-team/keras/issues/60):
 ![Coverage](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/test_coverage.png) 
 
-As we can see in this picture, the platform is Linux2 and the total coverage is *80%*.
+As we can see in this picture, the platform is **Linux2** and the total coverage is **80%**.
+## Software architecture
+In [User experience design for APIs](https://blog.keras.io/user-experience-design-for-apis.html), we can find that:
+>Keras is an API designed for human beings, not machines. Keras follows best practices for reducing cognitive load: it offers consistent & simple APIs, it minimizes the number of user actions required for common use cases, and it provides clear and actionable feedback upon user error.
+
+So basically Keras won't require user to implement or specify a lot of details but provided complete and detailed APIs. But if we want to add/edit functionality, of course we could do that. For example, we can define our own optimizer by subclassing keras.optimizers.Optimizer:
+```
+class MyOptimizer(Optimizer):
+    optimizer functions here.
+```
+Then instantiating it in our model:
+```
+myOpt = MyOptimizer()
+model.compile(loss='binary_crossentropy', optimizer=myOpt, metrics= ['accuracy'])
+```
