@@ -14,3 +14,6 @@ c) Although Keras support TensorFlow, CNTK, and Theano. But by default and in mo
 The build system used by Keras is Cmake and Bazel.
 ### 3. Frameworks / Libraries
 ![Frameworks](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Frameworks:Libraries.png)
+## Test Framework
+Keras is using **Travis-CI** platform. To make sure it's meaningful, it has a varitey of tests include integration tests, component tests and performance tests. The most recent test coverage I find is in 
+[Issue#60](https://github.com/keras-team/keras/issues/60):
