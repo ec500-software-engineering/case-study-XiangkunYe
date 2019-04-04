@@ -49,3 +49,15 @@ Keras is based on Python, which make it user-friendly and easy to use. However, 
 [ISSUE#7515](https://github.com/keras-team/keras/issues/7515) discussed a particular approach of the data-parallel SGD algorithm. It remarkably increased the efficiency of SGD by computing gradients in each tower separately, then averaged on PS device. But now it's still not implemented yet beacause
 the main contributor in this issure before don't have much time to continue working on this problem.
 ## Demo
+I developed a program consist of a 3 lays convolutional neural network and a 5 lays convolutional neural network based on Keras and Tensorflow.
+Then using about 700 images of car and cat to train them. Here's the predict result:
+
+[Predict](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Predict.png) 
+
+And here're two line charts about the trend of loss and accuracy during training process of 3/5 lays convolutional neural network ***(First for 3, second for 5)*** .
+
+![image](https://github.com/XiangkunYe/EC601_Deep-Learning/blob/master/Chart/Original_Chart3.png)
+
+![image](https://github.com/XiangkunYe/EC601_Deep-Learning/blob/master/Chart/Original_Chart5.png)
+
+As you can see, in this amount of datasets, the 3 lays convolutional neural network perform well while overfitting occured just after several epoches in the 5 lays convolutional neural network model.
