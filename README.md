@@ -17,3 +17,6 @@ The build system used by Keras is Cmake and Bazel.
 ## Test Framework
 Keras is using **Travis-CI** platform. To make sure it's meaningful, it has a varitey of tests include integration tests, component tests and performance tests. The most recent test coverage I find is in 
 [Issue#60](https://github.com/keras-team/keras/issues/60):
+![Coverage](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/test_coverage.png) 
+
+As we can see in this picture, the platform is Linux2 and the total coverage is *80%*.
