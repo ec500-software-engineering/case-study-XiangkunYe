@@ -21,7 +21,7 @@ Keras is using **Travis-CI** platform. To make sure it's meaningful, it has a va
 ![Coverage](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Test_Coverage.png) 
 
 As we can see in this picture, the platform is **Linux2** and the total coverage is **80%**.
-## Software architecture
+## Software Architecture
 In [User experience design for APIs](https://blog.keras.io/user-experience-design-for-apis.html), we can find that:
 >Keras is an API designed for human beings, not machines. Keras follows best practices for reducing cognitive load: it offers consistent & simple APIs, it minimizes the number of user actions required for common use cases, and it provides clear and actionable feedback upon user error.
 
@@ -39,3 +39,13 @@ Instead of standalone program, the most common way to use Keras is to import it 
 But according to my research, Tensorflow supports threads and queues to train heavy tensors asynchronously, which provides TPUs a better and much faster processing speeds. However Keras is synchronous, so you won't be able to do that in Keras. Here's the system diagram:
 
 ![Diagram](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/System_Diagram.png) 
+
+We can use those modules to build our specific nerual network and use dataset to train it. Then the weight information would be stored into a hdf5 file and be used later. And since Keras is based on Python, I think it's a mix of object oriented or functional component. Object oriented
+might be the larger part because each module I mentioned before is actually a call and will be use as a instance.
+##  Defect Analysis
+### 1. Language
+Keras is based on Python, which make it user-friendly and easy to use. However, this is also its defect. Python is known to have a low efficiency. Also, the human-oriented API design without a lot of user specified detail make it hard to build a outstanding model.
+### 2. Deep learning implementation
+[ISSUE#7515](https://github.com/keras-team/keras/issues/7515) discussed a particular approach of the data-parallel SGD algorithm. It remarkably increased the efficiency of SGD by computing gradients in each tower separately, then averaged on PS device. But now it's still not implemented yet beacause
+the main contributor in this issure before don't have much time to continue working on this problem.
+## Demo
