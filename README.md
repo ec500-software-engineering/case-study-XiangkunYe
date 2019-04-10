@@ -49,7 +49,7 @@ Keras is based on Python, which make it user-friendly and easy to use. However, 
 [ISSUE#7515](https://github.com/keras-team/keras/issues/7515) discussed a particular approach of the data-parallel SGD algorithm. It remarkably increased the efficiency of SGD by computing gradients in each tower separately, then averaged on PS device. But now it's still not implemented yet beacause
 the main contributor in this issure before don't have much time to continue working on this problem.
 ## Demo
-I developed a program consist of a 3 lays convolutional neural network and a 5 lays convolutional neural network based on Keras and Tensorflow.
+I developed a program consist of a 3 lays convolutional neural network and a 5 lays convolutional neural network based on Keras and Tensorflow. The source code can be found [here](https://github.com/XiangkunYe/Image-Classification-Using-CNN).
 Then using about 700 images of car and cat to train them. Here's the predict result:
 
 ![Predict](https://github.com/ec500-software-engineering/case-study-XiangkunYe/blob/master/Predict.png) 
